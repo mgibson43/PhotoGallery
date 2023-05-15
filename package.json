@@ -1,0 +1,26 @@
+{
+  "name": "photogallery",
+  "version": "1.0.0",
+  "description": "Photo gallery of me and my fiance",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgibson43/PhotoGallery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mgibson43/PhotoGallery/issues"
+  },
+  "homepage": "https://github.com/mgibson43/PhotoGallery#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "style-loader": "^3.3.2",
+    "webpack-cli": "^5.1.1"
+  }
+}
