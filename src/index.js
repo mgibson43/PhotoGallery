@@ -3,25 +3,59 @@ import './style.css';
 'use strict';
 
 (function () {
-  const body = document.querySelector('body');
+  let imgList = [];
 
-  const container = document.createElement('div');
-  container.classList.add('container');
+  const createNav = function() {
+    const body = document.querySelector('body');
+    const container = document.createElement('div');
+    container.classList.add('container');
+    
+    const nav = document.createElement('nav');
+    nav.classList.add('nav-main');
+    
+    const tab1 = document.createElement('div');
+    tab1.classList.add('tab-1');
+    tab1.classList.add('tab');
+    tab1.textContent = 'January Trip';
+    
+    const tab2 = document.createElement('div');
+    tab2.classList.add('tab-2');
+    tab2.classList.add('tab');
+    tab2.textContent = 'April Trip';
 
-  const nav = document.createElement('nav');
-  nav.classList.add('nav-main');
+    nav.appendChild(tab1);
+    nav.appendChild(tab2);
+    
+    body.appendChild(nav);
+    body.appendChild(container);
+  }
 
-  const tab1 = document.createElement('div');
-  tab1.classList.add('tab-1');
-  tab1.textContent = 'January Trip';
+  const createTab = function(tab) {
+    populateImgList(1);
+    populateTab();
+  }
 
-  const tab2 = document.createElement('div');
-  tab1.classList.add('tab-2');
-  tab2.textContent = 'April Trip';
+  const populateImgList = function(tab) {
+    imgList.length = 0;
 
-  nav.appendChild(tab1);
-  nav.appendChild(tab2);
+    let imgDir = `./imgs/trip_${tab}/`;
 
-  body.appendChild(nav);
-  body.appendChild(container);
+    for (let i = 1; i <= 28; i++) {
+      let img = `${imgDir}img${i}.jpg`;
+      imgList.push(img);
+    }
+  }
+
+  const populateTab = function() {
+    const container = document.querySelector('.container');
+    imgList.forEach(img => {
+      let el = document.createElement('img');
+      el.src = img;
+      el.classList.add('pic');
+      container.appendChild(el);
+    });
+  }
+
+  createNav();
+  createTab();
 })();
