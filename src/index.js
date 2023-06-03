@@ -5,33 +5,42 @@ import './style.css';
 (function () {
   let imgList = [];
 
-  const createNav = function() {
-    const body = document.querySelector('body');
-    const container = document.createElement('div');
-    container.classList.add('container');
+  const body = document.querySelector('body');
+  const container = document.createElement('div');
+  container.classList.add('container');
     
-    const nav = document.createElement('nav');
-    nav.classList.add('nav-main');
+  const nav = document.createElement('nav');
+  nav.classList.add('nav-main');
     
-    const tab1 = document.createElement('div');
-    tab1.classList.add('tab-1');
-    tab1.classList.add('tab');
-    tab1.textContent = 'January Trip';
-    
-    const tab2 = document.createElement('div');
-    tab2.classList.add('tab-2');
-    tab2.classList.add('tab');
-    tab2.textContent = 'April Trip';
+  const tab1 = document.createElement('div');
+  tab1.classList.add('tab-1');
+  tab1.classList.add('tab');
+  tab1.textContent = 'January Trip';
 
-    nav.appendChild(tab1);
-    nav.appendChild(tab2);
+  tab1.addEventListener('click', (e) => {
+    createTab(1);
+
+  });
     
-    body.appendChild(nav);
-    body.appendChild(container);
-  }
+  const tab2 = document.createElement('div');
+  tab2.classList.add('tab-2');
+  tab2.classList.add('tab');
+  tab2.textContent = 'April Trip';
+
+  tab2.addEventListener('click', (e) => {
+    createTab(2);
+
+  })
+
+  nav.appendChild(tab1);
+  nav.appendChild(tab2);
+    
+  body.appendChild(nav);
+  body.appendChild(container);
 
   const createTab = function(tab) {
-    populateImgList(1);
+    
+    populateImgList(tab);
     populateTab();
   }
 
@@ -47,7 +56,7 @@ import './style.css';
   }
 
   const populateTab = function() {
-    const container = document.querySelector('.container');
+    container.innerHTML = '';
     imgList.forEach(img => {
       let el = document.createElement('img');
       el.src = img;
@@ -56,6 +65,5 @@ import './style.css';
     });
   }
 
-  createNav();
-  createTab();
+  createTab(1);
 })();

@@ -5,6 +5,11 @@
   transition: all .4s;
 }
 
+body {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .nav-main {
   display: flex;
   padding: 1rem;
@@ -24,6 +29,7 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1rem;
   padding: 1rem;
+
 }
 
 .pic {
