@@ -32,6 +32,11 @@ import './style.css';
 
   })
 
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  container.appendChild(modal);
+
   nav.appendChild(tab1);
   nav.appendChild(tab2);
     
@@ -61,6 +66,9 @@ import './style.css';
       let el = document.createElement('img');
       el.src = img;
       el.classList.add('pic');
+      el.addEventListener('click', () => {
+        console.log('hi');
+      });
       container.appendChild(el);
     });
   }
