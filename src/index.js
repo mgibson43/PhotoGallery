@@ -32,6 +32,16 @@ import './style.css';
 
   })
 
+  const tab3 = document.createElement('div');
+  tab3.classList.add('tab-3');
+  tab3.classList.add('tab');
+  tab3.textContent = 'October Trip';
+
+  tab3.addEventListener('click', (e) => {
+    createTab(3);
+
+  })
+
   const modal = document.createElement('div');
   modal.classList.add('modal');
 
@@ -39,6 +49,7 @@ import './style.css';
 
   nav.appendChild(tab1);
   nav.appendChild(tab2);
+  nav.appendChild(tab3);
     
   body.appendChild(nav);
   body.appendChild(container);
